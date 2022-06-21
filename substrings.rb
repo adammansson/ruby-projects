@@ -1,7 +1,7 @@
 def substrings(sentence, dictionary)
   sentence.split.reduce(Hash.new(0)) do |accumulator, value|
     dictionary.each do |word|
-      if value.include?(word)
+      if value.downcase.include?(word.downcase)
         accumulator[word] += 1
       end
     end
