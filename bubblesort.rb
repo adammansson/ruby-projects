@@ -10,7 +10,7 @@ def bubble_sort(array)
         did_something = true
       end
     end
-    break if !did_something
+    break unless did_something
   end
 
   to_be_sorted
