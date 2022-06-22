@@ -3,6 +3,7 @@ require "./board.rb"
 
 class Game
   @@MARKERS = ["X", "O"]
+
   def Game.get_players()
     players = {}
     for i in 0..1 do
@@ -16,7 +17,6 @@ class Game
   end
 
   def Game.get_move()
-    puts "Enter move (two integers with a space between): "
     begin
       move = gets.chomp.split
       raise "Wrong number of arguments" unless move.length == 2
@@ -53,6 +53,9 @@ class Game
   end
 
   def playGame
+    @board.display
+    puts "Enter move (two integers with a space between): "
+
     turn_counter = 0
     until @winner do
       playRound(@@MARKERS[turn_counter % 2])
