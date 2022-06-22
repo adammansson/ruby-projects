@@ -10,7 +10,7 @@ class Game
       print "Enter name: "
       name = gets.chomp
       marker = @@MARKERS[i]
-      players[marker] = Player.new(name, marker)
+      players[marker] = Player.new(name)
       puts "Player #{name} added with marker #{marker}"
     end
     players
@@ -23,6 +23,7 @@ class Game
       raise "Arguments are too long" unless move.all? { |str| str.length == 1 }
       raise "Arguments are not integers" unless move.all? { |str| str.ord.between?(48, 57) }
       move = move.map { |str| str.to_i }
+      raise "Arguments are not in range (0-2)" unless move.all? { |i| i.between?(0, 2) }
       return move
     rescue StandardError=>e
       puts "#{e}, try again..."
