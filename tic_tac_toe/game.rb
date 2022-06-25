@@ -1,4 +1,5 @@
 require "./player.rb"
+require "./move.rb"
 require "./board.rb"
 
 class Game
@@ -24,6 +25,8 @@ class Game
       raise "Arguments are not integers" unless move.all? { |str| str.ord.between?(48, 57) }
       move = move.map { |str| str.to_i }
       raise "Arguments are not in range (0-2)" unless move.all? { |i| i.between?(0, 2) }
+
+      move = Move.new(move[0], move[1])
       return move
     rescue StandardError=>e
       puts "#{e}, try again..."

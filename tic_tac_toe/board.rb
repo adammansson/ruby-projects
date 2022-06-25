@@ -4,8 +4,8 @@ class Board
   end
 
   def make_move(move, marker)
-    unless @matrix[move[0]][move[1]]
-      @matrix[move[0]][move[1]] = marker
+    unless @matrix[move.row][move.col]
+      @matrix[move.row][move.col] = marker
     else
       raise "That square is occupied"
     end
