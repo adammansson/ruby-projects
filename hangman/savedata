@@ -1,0 +1,21 @@
+---
+:secret:
+- c
+- h
+- a
+- r
+- g
+- e
+- s
+:correct_letters:
+- c
+- h
+- a
+- r
+- "-"
+- e
+- "-"
+:wrong_letters:
+- i
+- o
+- p
